@@ -1,0 +1,59 @@
+
+
+-----------------------------------
+
+dipartimento
+
+id - SMALLINT - PRIMARY_KEY - AUTO_INCREMENT
+nome - VARCHAR(60) - NOTNULL
+localita - VARCHAR(100) - NOTNULL 
+
+------------------------------------
+
+corso
+
+id - MEDIUMINT - PRIMARY_KEY - AUTO_INCREMENT
+dipartimento_id - SMALLINT - FOREIGN_KEY - AUTO_INCREMENT
+studente_id - INT - FOREIGN_KEY - AUTO_INCREMENT
+insegnante_id - SMALLINT - FOREIGN_KEY - AUTO_INCREMENT
+esami_id - MEDIUMINT - FOREIGN_KEY - AUTO_INCREMENT
+nome - VARCHAR(50) - NOTNULL 
+
+-------------------------------------
+
+insegnante
+
+id - SMALLINT - PRIMARY_KEY - AUTO_INCREMENT
+nome - VARCHAR(25) - NOTNULL
+cognome - VARCHAR(20) - NOTNULL
+data_di_nascita - DATE - NOTNULL
+indirizzo - VARCHAR(50) - NOTNULL 
+
+--------------------------------------
+
+studente
+
+id - INT - PRIMARY_KEY - AUTO_INCREMENT
+nome - VARCHAR(25) - NOTNULL
+cognome - VARCHAR(20) - NOTNULL
+data_di_nascita - DATE - NOTNULL
+indirizzo - VARCHAR(50) - NOTNULL 
+
+--------------------------------------
+
+esame
+
+id - INT - PRIMARY_KEY - AUTO_INCREMENT
+studente_id - INT - FOREIGN_KEY - AUTO_INCREMENT
+data - DATE - NOTNULL
+
+--------------------------------------
+
+votazione
+
+id - INT - FOREIGN_KEY - AUTO_INCREMENT
+voto - TINYINT - NOTNULL
+
+---------------------------------------
+
+
