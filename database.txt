@@ -16,7 +16,7 @@ id - MEDIUMINT - PRIMARY_KEY - AUTO_INCREMENT
 dipartimento_id - SMALLINT - FOREIGN_KEY - AUTO_INCREMENT
 studente_id - INT - FOREIGN_KEY - AUTO_INCREMENT
 insegnante_id - SMALLINT - FOREIGN_KEY - AUTO_INCREMENT
-esami_id - MEDIUMINT - FOREIGN_KEY - AUTO_INCREMENT
+esami_id - INT - FOREIGN_KEY - AUTO_INCREMENT
 nome - VARCHAR(50) - NOTNULL 
 
 -------------------------------------
