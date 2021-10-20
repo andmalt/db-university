@@ -1,5 +1,4 @@
 
-
 -----------------------------------
 
 dipartimento
@@ -9,15 +8,31 @@ nome - VARCHAR(60) - NOTNULL
 localita - VARCHAR(100) - NOTNULL 
 
 ------------------------------------
+corso_di_laurea
+
+id - MEDIUMINT - PRIMARY_KEY - AUTO_INCREMENT
+dipartimento_id - SMALLINT - FOREIGN_KEY 
+nome VARCHAR(60) - NOTNULL
+livello VARCHAR(30) - NOTNULL
+indirizzo VARCHAR(100) - NOTNULL
+email VARCHAR(100) - NOTNULL
+
+--------------------------------------
 
 corso
 
 id - MEDIUMINT - PRIMARY_KEY - AUTO_INCREMENT
-dipartimento_id - SMALLINT - FOREIGN_KEY - AUTO_INCREMENT
-studente_id - INT - FOREIGN_KEY - AUTO_INCREMENT
-insegnante_id - SMALLINT - FOREIGN_KEY - AUTO_INCREMENT
-esami_id - INT - FOREIGN_KEY - AUTO_INCREMENT
-nome - VARCHAR(50) - NOTNULL 
+corso_di_laurea_id - INT - FOREIGN_KEY 
+nome - VARCHAR(60) - NOTNULL 
+descrizione - TEXT - NULL 
+anno TINYINT - NOTNULL
+
+-------------------------------------
+
+tabella ponte corso_insegnate
+
+corso_id - MEDIUMINT -  PRIMARY_KEY 
+insegnante_id - SMALLINT -  PRIMARY_KEY 
 
 -------------------------------------
 
@@ -26,7 +41,8 @@ insegnante
 id - SMALLINT - PRIMARY_KEY - AUTO_INCREMENT
 nome - VARCHAR(25) - NOTNULL
 cognome - VARCHAR(20) - NOTNULL
-data_di_nascita - DATE - NOTNULL
+telefono VARCHAR(50) - NULL
+email VARCHAR(100) - NOTNULL
 indirizzo - VARCHAR(50) - NOTNULL 
 
 --------------------------------------
@@ -36,22 +52,24 @@ studente
 id - INT - PRIMARY_KEY - AUTO_INCREMENT
 nome - VARCHAR(25) - NOTNULL
 cognome - VARCHAR(20) - NOTNULL
+corso_di_laurea_id - MEDIUMINT - FOREIGN_KEY
 data_di_nascita - DATE - NOTNULL
-indirizzo - VARCHAR(50) - NOTNULL 
+data_iscrizione - DATE - NOTNULL
 
 --------------------------------------
 
 esame
 
 id - INT - PRIMARY_KEY - AUTO_INCREMENT
-studente_id - INT - FOREIGN_KEY - AUTO_INCREMENT
+corso_id - MEDIUMINT - FOREIGN_KEY
 data - DATE - NOTNULL
 
 --------------------------------------
 
-votazione
+tabella ponte esame_studente
 
-id - INT - FOREIGN_KEY - AUTO_INCREMENT
+esame_id - INT - PRIMARY_KEY
+studente_id - INT - PRIMARY_KEY
 voto - TINYINT - NOTNULL
 
 ---------------------------------------
