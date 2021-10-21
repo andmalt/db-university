@@ -23,5 +23,5 @@ relativo dipartimento, in ordine alfabetico per cognome e nome
 
 ---------------------------------------------------------------------------------------
 
-
-
+1- SELECT * FROM `students` LEFT JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id` WHERE `degrees`.`name` = 'corso di laurea in economia'; 
+2- 
