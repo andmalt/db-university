@@ -28,7 +28,7 @@ relativo dipartimento, in ordine alfabetico per cognome e nome
 3- SELECT * FROM `courses` LEFT JOIN `course_teacher` ON `courses`.id = `course_teacher`.`teacher_id` WHERE `course_teacher`.`teacher_id` = 44; 
 4- SELECT * FROM `students` JOIN `degrees` ON `students`.`degree_id` = `degrees`.`id` JOIN `departments` ON `degrees`.`department_id` = `departments`.`id` ORDER BY `students`.`surname`,`students`.`name` ASC; 
 5- SELECT `degrees`.`name`,`courses`.`name`,`teachers`.`surname`,`teachers`.`name` FROM `degrees` JOIN `courses` ON `degrees`.`id` = `courses`.`degree_id` JOIN `course_teacher` ON `courses`.`id` = `course_teacher`.`teacher_id` JOIN `teachers` ON `course_teacher`.`teacher_id` = `teachers`.`id`; 
-6- SELECT `teachers`.`name`,`teachers`.`surname`,`departments`.`name` AS 'dipartimento'
+6- SELECT DISTINCT `teachers`.`name`,`teachers`.`surname`,`departments`.`name` AS 'dipartimento'
 FROM `teachers` 
 JOIN `course_teacher` ON `teachers`.`id` = `course_teacher`.`teacher_id`
 JOIN `courses` ON `course_teacher`.`course_id` = `courses`.`id`
